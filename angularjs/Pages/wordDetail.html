@@ -1,0 +1,86 @@
+<style>
+    .btn
+    {
+        padding: 10px;
+        margin-left: 10px;
+        margin-bottom: 25px;
+        width:120px;
+        height:40px;
+    }
+    .btn-danger
+    {
+        padding: 10px;
+        margin-left: 10px;
+        margin-bottom: 25px;
+        width:50px;
+        height:40px;
+    }
+    .btn-warning
+    {
+        padding: 10px;
+        margin-left: 10px;
+        margin-bottom: 25px;
+        width:120px;
+        height:40px;
+    }
+</style>
+
+<div class="container" align="center">
+    <h1 style="color:red;">{{getworddetail.name}}</h1>
+    <form accept-charset="UTF-8" role="form" name="frm" ng-submit="wordupdate()">
+        <fieldset>
+            <table>
+                <tr>
+                    <td>
+                        <div class="form-group" style="width: 400px">
+                            <input class="form-control" ng-model="updateword" placeholder="Kelime Girin" type="text" value="" >
+                        </div>
+                    </td>
+                    <td>
+                        <input  class="btn btn-primary" type="submit" value="Güncelle">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+    <form accept-charset="UTF-8" role="form" name="frm" ng-submit="addmean(getworddetail.id)">
+        <fieldset>
+            <table>
+                <tr>
+                    <td>
+                        <div class="form-group" style="width: 400px">
+                            <input class="form-control" ng-model="addmeann" placeholder="Anlam Girin" type="text" value="" >
+                        </div>
+                    </td>
+                    <td>
+                        <input  class="btn btn-primary" type="submit" value="Anlam Ekle">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+
+    <h3>kelimenin anlamları:</h3>
+    <table class="table">
+        <tr ng-repeat="mean in getworddetail.means">
+            <td>
+                <table class="table">
+                    <tr>
+                        <td></td>
+                        <td>
+                            <h4  style="color: mediumslateblue">
+                                {{mean.meanName}}
+                            </h4>
+                        </td>
+                        <td>
+                            <div align="right">
+                                <button class="btn btn-danger" ng-click="deletemean(mean.id)">sil</button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <button class="btn btn-warning" ng-click="deleteword(getworddetail.id)">Kelimeyi Sil</button>
+</div>

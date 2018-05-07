@@ -1,0 +1,28 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark default-color-dark fixed-top">
+        <a class="navbar-brand" ui-sref="home">My Dictionary</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li ng-class="{active:$state.includes('home'}" >
+                    <a class="nav-link" ui-sref="home">Kelimelerim</a>
+                </li>
+                <li ng-class="{active:$state.includes('friends'}" >
+                    <a class="nav-link" ui-sref="friends">Arkadaşlarım</a>
+                </li>
+                <li ng-class="{active:$state.includes('allpackage'}">
+                    <a class="nav-link" ui-sref="allpackage">Paketlerim</a>
+                </li>
+                <li>
+                    <a class="nav-link" ui-sref="logout">Çıkış</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+    <br/>
+    <br/>
+    <br/>
+</header>
+

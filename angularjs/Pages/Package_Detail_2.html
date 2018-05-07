@@ -1,0 +1,10 @@
+<h2 align="center" style="color: blue">-{{getallpackage.packageName}}-</h2>
+</br>
+</br>
+<table class="table table-striped" style="width: 300px" align="center">
+    <tr ng-repeat="word in getallpackage2.words" align="center">
+        <td ui-sref="worddetail({id: word.id})" >
+            <h6>{{word.name}}</h6>
+        </td>
+    </tr>
+</table>

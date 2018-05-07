@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <item
+        android:id="@+id/friends"
+        android:orderInCategory="100"
+        android:title="kişilerim"
+        android:icon="@drawable/friends"
+        app:showAsAction="always"
+        ></item>
+    <item
+        android:id="@+id/ekle"
+        android:orderInCategory="100"
+        android:title="kelime ekle"
+        android:icon="@android:drawable/ic_input_add"
+        app:showAsAction="always"
+        ></item>
+    <item
+        android:id="@+id/get_package"
+        android:orderInCategory="100"
+        android:title="paketlerim"
+        android:icon="@drawable/box"
+        app:showAsAction="always"
+        ></item>
+    <item
+        android:id="@+id/game"
+        android:orderInCategory="100"
+        android:title="oyunlar"
+        android:icon="@drawable/joystick"
+        app:showAsAction="always"
+        ></item>
+    <item
+        android:id="@+id/logout"
+        android:orderInCategory="100"
+        android:title="Çıkış Yap"
+        android:icon="@drawable/logout"
+        app:showAsAction="ifRoom"
+        ></item>
+</menu>

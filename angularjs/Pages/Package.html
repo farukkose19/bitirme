@@ -1,0 +1,83 @@
+<style>
+    @import "compass/css3";
+    body {
+        margin: 15px;
+    }
+
+    /* text recolor */
+    h1, p, a {
+        color: #4DC9C9 !important;
+    }
+
+    /* button recolor */
+    .nav-pills > li.active > a, .btn-primary {
+        background-color: #6C6C6C !important;
+    // feeling like it's a rounded corners kind of day
+    border-color: #6C6C6C !important;
+        border-radius: 25px;
+    }
+</style>
+
+    <h3 align="center" style="color: blue">{{friend.name}}</h3>
+
+    <div class="col-md-2">
+        <ul class="nav nav-pills nav-stacked">
+            <li ng-class="{ active: isSet(1) }">
+                <a href ng-click="setTab(1)">  &emsp; Gönderdiğim paketler  </a>
+            </li>
+            <li ng-class="{ active: isSet(2) }">
+                <a href ng-click="setTab(2)">  &emsp; Gelen Paketler &emsp;  </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col-md-8">
+        <div class="jumbotron">
+            <div ng-show="isSet(1)">
+
+                <input type="image" src="remove.png" width="32" height="32" align="right" ng-click="delete()"/>
+
+                <table class="table " style="width: 200px" align="center">
+                    <tr ng-repeat="item in getpackage">
+                        <td align="center">
+                            <table border="1" style="border-color: green" class="table table-hover">
+                                <tr class="table table-info">
+                                    <td style="color: red; width: 200px;" align="center" ui-sref="packagedetail({id: item.id})">
+                                        <h4>{{item.packageName}}</h4>
+                                    </td>
+                                </tr>
+                                <tr ng-repeat="word in item.words">
+                                    <td ui-sref="worddetail({id: word.id})">
+                                        {{word.name}}
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div ng-show="isSet(2)">
+
+                <table class="table " style="width: 200px" align="center">
+                    <tr ng-repeat="item in getfriendPackage">
+                        <td align="center">
+                            <table border="1" style="border-color: green" class="table table-hover">
+                                <tr class="table table-info">
+                                    <td style="color: red; width: 200px;" align="center" ui-sref="packagedetail({id: item.id})">
+                                        <h4>{{item.packageName}}</h4>
+                                    </td>
+                                </tr>
+                                <tr ng-repeat="word in item.words">
+                                    <td ui-sref="worddetail({id: word.id})">
+                                        {{word.name}}
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>

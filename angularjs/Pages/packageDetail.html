@@ -1,0 +1,14 @@
+
+
+
+<h2 align="center" style="color: blue">-{{getallpackage.packageName}}-</h2>
+<input type="image" src="remove.png" width="32" height="32" align="right" style="margin-right: 100px" ng-click="delete()"/>
+</br>
+</br>
+<table class="table table-striped" style="width: 300px" align="center">
+    <tr ng-repeat="word in getallpackage.words" align="center">
+        <td ui-sref="worddetail({id: word.id})" >
+            <h6>{{word.name}}</h6>
+        </td>
+    </tr>
+</table>

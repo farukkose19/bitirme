@@ -1,0 +1,60 @@
+/*    class loginislemi extends AsyncTask<String,Void,String> {
+        String sonuc="giriþ iþlemi baþarýsýz lütfen daha sonra tekrar deneyin!!";
+        @Override
+        protected String doInBackground(String... strings) {
+
+            try{
+                OkHttpClient client=new OkHttpClient();
+                String idd=String.valueOf(idx);
+                RequestBody postdata=new FormBody.Builder()
+                        .add("id",idd)
+                        .build();
+                Request request=new Request.Builder()
+                        .url(JSON_URL)
+                        .post(postdata)
+                        .build();
+                Response response=client.newCall(request).execute();
+                String results=response.body().string();
+                JSONArray object=new JSONArray(results);
+
+                Gson gson = new Gson();
+                List<word> words = new ArrayList<word>();
+
+                words = Arrays.asList(gson.fromJson(String.valueOf(object), word[].class));
+                if(words.get(0).means.size()>0)
+                    meanid.addAll(words.get(0).means);
+                name=words.get(0).name;
+*//*
+                word wrd=new word();
+                for(int i=0; i < object.length(); i++) {
+                    JSONObject jsonobject = object.getJSONObject(i);
+                    id= jsonobject.getInt("id");
+                    name=jsonobject.getString("name");
+                    wrd.id=id;
+                   JSONArray means =(JSONArray)jsonobject.get("means");
+                    wrd.name=name;*//**//**//**//*
+                    if(means.length()!=0){
+                    for(int j=0;j<means.length();j++){
+                        Integer ii=new Integer(means.getInt(j));
+                        meanid.add(ii);
+                    }
+
+                    }
+
+                }
+*//*
+            }catch (Exception e){
+                Log.e("yyyyyyyy",e.toString());
+                sonuc=("giriþ baþarýsýz! tekrar deneyin");
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            wordname.setText(name);
+            if(meanid.size()>0)
+                meancek();
+        }
+    }*/

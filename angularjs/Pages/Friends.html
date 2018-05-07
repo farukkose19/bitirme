@@ -1,0 +1,85 @@
+<style>
+    @import "compass/css3";
+    body {
+        margin: 15px;
+    }
+
+    /* text recolor */
+    h1, p, a {
+        color: #4DC9C9 !important;
+    }
+
+    /* button recolor */
+    .nav-pills > li.active > a, .btn-primary {
+        background-color: #6C6C6C !important;
+    // feeling like it's a rounded corners kind of day
+    border-color: #6C6C6C !important;
+        border-radius: 25px;
+    }
+</style>
+
+<div class="col-md-2">
+    <ul class="nav nav-pills nav-stacked">
+        <li ng-class="{ active: isSet(1) }">
+            <a href ng-click="setTab(1)">  &emsp; Arkadaşlarım &emsp; </a>
+        </li>
+        <li ng-class="{ active: isSet(2) }">
+            <a href ng-click="setTab(2)">  &emsp; arkadaş ekle &emsp;  </a>
+        </li>
+    </ul>
+</div>
+
+<div class="col-md-8">
+    <div class="jumbotron">
+        <div ng-show="isSet(1)">
+
+            <table class="table table-hover">
+                <tr class="table table-info">
+                    <td>
+                        Ad
+                    </td>
+                    <td>
+                        Soyad
+                    </td>
+                </tr >
+                <tr ng-repeat="item in friends.friends" ui-sref="package({id: item.id})" class='clickable-row'>
+                    <td  >
+                        {{item.name}}
+                    </td>
+                    <td>
+                        {{item.surname}}
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div ng-show="isSet(2)">
+            <input type="text" ng-model="arkadas_ismi">
+            <button ng-click="bul()">ARA</button>
+            <table class="table table-hover">
+                <tr class="table table-info">
+                    <td>
+                        Ad
+                    </td>
+                    <td>
+                        Soyad
+                    </td>
+                </tr >
+                <tr ng-repeat="item in friendss" ng-click="ekliMi(item.id)" class='clickable-row'>
+                    <td>
+                        {{item.name}}
+                    </td>
+                    <td>
+                        {{item.surname}}
+                    </td>
+                    <td>
+                        <div ng-style="visibilite(item.id)">
+                            <img src="checked.png" height="32" width="32"/>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
